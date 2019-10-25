@@ -76,7 +76,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Flutter PDF Tutorial"),
+          title: Text("Pdf _Viewer _For _Hadeel"),
         ),
         body: Center(
           child: Builder(
@@ -179,22 +179,24 @@ class _PdfViewPageState extends State<PdfViewPage> {
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
+           _currentPage+1 < _totalPages
+              ? FloatingActionButton.extended(
+                  backgroundColor: Colors.green,
+                  label: Text("Go to ${_currentPage + 1}"),
+                  onPressed: () {
+                    _currentPage += 1;
+                    _pdfViewController.setPage(_currentPage);
+                  },
+                )
+         
+              : Offstage(),
+              SizedBox(width:50.0),
           _currentPage > 0
               ? FloatingActionButton.extended(
                   backgroundColor: Colors.red,
                   label: Text("Go to ${_currentPage - 1}"),
                   onPressed: () {
                     _currentPage -= 1;
-                    _pdfViewController.setPage(_currentPage);
-                  },
-                )
-              : Offstage(),
-          _currentPage+1 < _totalPages
-              ? FloatingActionButton.extended(
-                  backgroundColor: Colors.green,
-                  label: Text("Go to ${_currentPage + 1}"),
-                  onPressed: () {
-                    _currentPage += 1;
                     _pdfViewController.setPage(_currentPage);
                   },
                 )
