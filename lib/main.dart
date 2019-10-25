@@ -8,14 +8,18 @@ import 'package:http/http.dart' as http;
 
 void main() => runApp(MyApp());
 
+
+
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
+
 }
 
 class _MyAppState extends State<MyApp> {
   String assetPDFPath = "";
   String urlPDFPath = "";
+
 
   @override
   void initState() {
@@ -74,9 +78,11 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: Builder(
+
             builder: (context) => Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
+                   
                     RaisedButton(
                       color: Colors.amber,
                       child: Text("Open from URL"),
