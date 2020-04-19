@@ -1,6 +1,7 @@
-# flutterpdfview
+# flutterpdfviewer - App
 
-A new Flutter project.
+This app will show how to play with flutter pdf viewer
+![](pdfView.gif)
 
 ## Getting Started
 
